@@ -8,6 +8,9 @@
   padding: 0;
   font-family: MontserratMedium;
 }
+html {
+  overflow-x: hidden;
+}
 .mainBackground {
   width: 100vw;
   height: 100vh;
@@ -67,4 +70,18 @@
     object-fit: cover;
     z-index: -1;
   }
+}
+.bestSellers {
+  display: flex;
+  margin: 1rem auto;
+  width: 80%;
+  border-left: none;
+  border-right: none;
+  font-size: 3rem;
+  text-align: center;
+  legend {
+    padding: 0 2rem;
+  }
+}
+.itemPreview {
 }
