@@ -1,12 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import BestSellerItem from './BestSellerItem'
 
-export default function BestSellers() {
-    const itemList = [{id:1,img:"pictures/polar-brown.jpg",price:"49,99$"},{id:1,img:"pictures/polar-black.jpg",price:"49,99$"}]
+function BestSellers(props) {
     return (
         <fieldset className="bestSellers">
             <legend>Best Sellers</legend>
-            <BestSellerItem />
+            {props.bestSellers.map(item=>{
+                return <BestSellerItem key={item.id} item={item}/>
+            })}
         </fieldset>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        bestSellers: state.bestSellers
+    }
+}
+
+export default connect(mapStateToProps)(BestSellers)
