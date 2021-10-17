@@ -4,7 +4,7 @@ import BestSellerItem from './BestSellerItem'
 
 function BestSellers(props) {
     return (
-        <fieldset className="bestSellers">
+        <fieldset id="field" className="bestSellers">
             <legend>Best Sellers</legend>
             {props.bestSellers.map(item=>{
                 return <BestSellerItem key={item.id} item={item}/>

@@ -1,18 +1,23 @@
 import React,{useEffect,useRef} from 'react'
 import gsap from 'gsap'
+import { CSSRulePlugin } from "gsap/all";
 
 import BestSellers from './BestSellers'
+import AboutUs from './AboutUs';
 
 export default function Main() {
     let main = useRef(null)
-
+    
     useEffect(()=>{
+        const rule1 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:before")
+        const rule2 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:after")
+        
         const timeLine = gsap.timeline({defaults:{duration:1}})
         timeLine
             .from(main.querySelector(".mainTitle"),{opacity:0},.4)
             .from(main.querySelectorAll(".mainTxt"),{height:0})
-            .to(main.querySelector(".mainBtn"),{padding: "0.5rem 3.5rem",maxWidth: "400px"})
-            .to(main.querySelector(".mainBtn"),{border: "6px solid white"})
+            .to(main.querySelector(".mainBtn"),{padding: "1rem 4rem",maxWidth: "400px"})
+            .to([rule1,rule2],{visibility:"visible",height:"100%",width:"100%"})
     },[])
 
     return (
@@ -30,6 +35,7 @@ export default function Main() {
                 <img className="backgroundImage" src="/pictures/mountains1.jpg" alt="mountains"/>
             </div>
             <BestSellers />
+            <AboutUs />
         </>
     )
 }
