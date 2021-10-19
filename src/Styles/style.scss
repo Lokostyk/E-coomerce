@@ -16,7 +16,6 @@ html {
 }
 .navbar {
   display: flex;
-  justify-content: center;
   position: fixed;
   top: 0;
   overflow: hidden;
@@ -26,7 +25,26 @@ html {
   transition: 1s all;
   backdrop-filter: blur(8px);
   z-index: 2;
+  .logo {
+    display: flex;
+    align-items: center;
+    div {
+      height: 50%;
+      border: 1px solid black;
+    }
+    img {
+      margin: 0 0.1rem 0 1rem;
+      height: 70px;
+    }
+    p {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-left: 10px;
+    }
+  }
   ul {
+    display: flex;
+    margin: 0 auto;
     list-style: none;
     li {
       display: flex;
@@ -38,6 +56,23 @@ html {
     font-size: 2.5rem;
     color: white;
     text-decoration: none;
+  }
+  .cart {
+    margin-right: 0.5rem;
+    position: relative;
+    img {
+      height: 100px;
+    }
+    span {
+      padding: 0.3rem 0.5rem;
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      font-size: 1.5rem;
+      background-color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+    }
   }
 }
 .mainBackground {
@@ -124,7 +159,7 @@ html {
 }
 .bestSellers {
   display: flex;
-  margin: -1.8rem 0;
+  margin: -1.8rem 0 0 0;
   width: 100%;
   position: relative;
   border-left: none;
@@ -158,12 +193,22 @@ legend {
   }
 }
 .aboutUs {
-  margin: 2rem 2% 2rem auto;
-  width: 80%;
+  width: 100%;
   article {
     display: flex;
     text-align: center;
     align-items: center;
+    margin: 2rem 2rem 1rem 15%;
+    &:nth-child(even) {
+      margin: 2rem 15% 1rem 2rem;
+      img {
+        height: 35rem;
+      }
+      div {
+        margin-right: 0;
+        margin-left: 3rem;
+      }
+    }
     div {
       margin-right: 3rem;
     }
