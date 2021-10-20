@@ -2,8 +2,8 @@ import React,{useEffect,useRef} from 'react'
 import gsap from 'gsap'
 import { CSSRulePlugin } from "gsap/all";
 
-import BestSellers from './BestSellers'
-import AboutUs from './AboutUs';
+import BestSellers from '../BestSellers/BestSellers'
+import AboutUs from '../About.js/AboutUs';
 
 export default function Main() {
     let main = useRef(null)

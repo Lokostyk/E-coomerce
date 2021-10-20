@@ -3,8 +3,8 @@ import { Provider } from 'react-redux'
 import store from "./Redux/store"
 import {Route,useLocation} from "react-router-dom"
 
-import Main from "./Components/Main"
-import Navbar from "./Components/Navbar";
+import Main from "./Components/Home/Main"
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   const {hash} = useLocation()

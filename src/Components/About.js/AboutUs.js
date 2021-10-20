@@ -1,8 +1,19 @@
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutUs() {
+    let itemRef = useRef(null)
+    useEffect(() => {
+        const items = itemRef.getElementsByTagName("h1")
+        for(let item of items){
+            gsap.to(item,{scrollTrigger:{trigger:item,start:"top center",end:"top 40%",scrub:1},transform:"scale(1.02)",duration:1})
+        }
+    }, [itemRef])
     return (
-            <div className="aboutUs">
+            <div ref={e=>itemRef=e}className="aboutUs">
                 <article>
                     <div className="textContainer">
                         <h1>Best fabric on the market</h1>
