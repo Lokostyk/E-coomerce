@@ -4,13 +4,23 @@ import {Link} from "react-router-dom"
 export default function Navbar() {
     return (
         <nav className="navbar">
-            <a className="logo">
+            <Link className="logo" to="/">
                 <img src="pictures/logo.png" />
                 <div/>
                 <p>JourneyEmpire</p>
-            </a>
+            </Link>
             <ul>
-                <li><Link to="/#field" className="navLink">Products</Link></li>
+                <li>
+                    <ul className="products">
+                        <Link to="/#field" className="navLink" >Products</Link>
+                        <div>
+                        <li><Link to="/#field" className="subNavLink" >Boots</Link></li>
+                        <li><Link to="/#field" className="subNavLink" >Jackets</Link></li>
+                        <li><Link to="/#field" className="subNavLink" >T-shirts</Link></li>
+                        <li><Link to="/#field" className="subNavLink" >Trousers</Link></li>
+                        </div>
+                    </ul>
+                </li>
                 <li><Link to="/" className="navLink">About Us</Link></li>
                 <li><Link to="/" className="navLink">Contact</Link></li>
                 <li><Link to="/" className="navLink">Info</Link></li>

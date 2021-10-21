@@ -24,6 +24,7 @@ export default function Main() {
     return (
         <>
             <div ref={el=>main=el} className="mainBackground">
+                <img className="backgroundImage" src="/pictures/mountains1.jpg" alt="mountains"/>
                 <div className="mainContent">
                     <p className="mainTitle">Go <span>&nbsp;out</span>door</p>
                     <div></div>
@@ -33,7 +34,6 @@ export default function Main() {
                         <button className="mainBtn">explore</button>
                     </div>
                 </div>
-                <img className="backgroundImage" src="/pictures/mountains1.jpg" alt="mountains"/>
             </div>
             <BestSellers />
             <ProductsCategories />

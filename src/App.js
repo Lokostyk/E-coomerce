@@ -21,6 +21,7 @@ function App() {
     document.addEventListener("scroll",addNav)
   },[hash])
   const addNav = () =>{
+    document.querySelector(".navbar").style.overflow = "visible"
     document.querySelector(".navbar").style.maxHeight = "200px"
     document.removeEventListener("scroll",addNav)
   }

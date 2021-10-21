@@ -10,6 +10,9 @@
   font-family: MontserratMedium;
   word-spacing: 1.2px;
 }
+a {
+  text-decoration: none;
+}
 html {
   overflow-x: hidden;
   background-color: #f5f5f5;
@@ -30,6 +33,7 @@ html {
     display: flex;
     align-items: center;
     color: white;
+    text-decoration: none;
     div {
       height: 50%;
       border: 1px solid #e6a519;
@@ -52,13 +56,57 @@ html {
       display: flex;
       align-items: center;
     }
+    .products {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      div {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 90%;
+        max-height: 0px;
+        font-size: 3rem;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translate(-50%, 0);
+        transition: 1s all;
+        z-index: 4;
+      }
+      .subNavLink {
+        padding: 1.5rem 3.5rem;
+        width: 100%;
+        font-size: 2.5rem;
+        color: white;
+        transition: all 0.4s;
+        &:hover {
+          padding-inline-start: 3.8rem;
+          color: black;
+          background-color: rgba(255, 255, 255, 0.6);
+        }
+      }
+      &:hover div {
+        max-height: 500px;
+      }
+    }
   }
   .navLink {
+    position: relative;
     padding: 1.5rem 3.5rem;
     font-size: 2.5rem;
     color: white;
     text-decoration: none;
+    background-image: linear-gradient(white, white);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: bottom;
+    background-size: 0% 3px;
+    transition: all 0.4s;
+    &:hover {
+      background-size: 80% 3px;
+    }
   }
+
   .cart {
     margin-right: 0.5rem;
     position: relative;
@@ -232,9 +280,9 @@ legend {
       border-radius: 10px;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       text-align: center;
-      padding: 0.1rem 0 0.5rem 0;
+      padding: 0.1rem 0 0.8rem 0;
     }
   }
 }
