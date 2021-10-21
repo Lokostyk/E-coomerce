@@ -22,15 +22,17 @@ html {
   width: 100%;
   max-height: 0px;
   background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid black;
   transition: 1s all;
   backdrop-filter: blur(8px);
   z-index: 2;
   .logo {
     display: flex;
     align-items: center;
+    color: white;
     div {
       height: 50%;
-      border: 1px solid black;
+      border: 1px solid #e6a519;
     }
     img {
       margin: 0 0.1rem 0 1rem;
@@ -168,6 +170,7 @@ html {
   text-align: center;
   background: #fff;
   background-size: 100vh;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 legend {
   padding: 0 2rem;
@@ -192,13 +195,60 @@ legend {
     color: $gold;
   }
 }
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("http:/pictures/wave.svg"),
+    url("http:/pictures/wave-top.svg");
+  background-repeat: no-repeat no-repeat;
+  background-position: bottom, top;
+  background-color: #f5f5f5;
+  width: 100%;
+  h1 {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+  }
+  div {
+    padding: 1rem 2rem 2rem 2rem;
+    margin: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    img {
+      height: 25rem;
+      border-radius: 10px;
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      padding: 0.1rem 0 0.5rem 0;
+    }
+  }
+}
 .aboutUs {
   width: 100%;
+  background-color: #fff;
   article {
     display: flex;
     text-align: center;
     align-items: center;
     margin: 2rem 2rem 1rem 15%;
+    &:first-of-type {
+      margin-top: 0px;
+    }
     &:nth-child(even) {
       margin: 2rem 15% 1rem 2rem;
       img {

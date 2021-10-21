@@ -4,6 +4,7 @@ import { CSSRulePlugin } from "gsap/all";
 
 import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
+import ProductsCategories from './subcomponents/ProductsCategories';
 
 export default function Main() {
     let main = useRef(null)
@@ -35,6 +36,7 @@ export default function Main() {
                 <img className="backgroundImage" src="/pictures/mountains1.jpg" alt="mountains"/>
             </div>
             <BestSellers />
+            <ProductsCategories />
             <AboutUs />
         </>
     )
