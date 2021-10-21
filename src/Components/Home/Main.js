@@ -13,6 +13,7 @@ export default function Main() {
         const rule1 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:before")
         const rule2 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:after")
         
+        gsap.to(document.getElementsByTagName("html"),{visibility:"visible"})
         const timeLine = gsap.timeline({defaults:{duration:1}})
         timeLine
             .from(main.querySelector(".mainTitle"),{opacity:0},.4)
