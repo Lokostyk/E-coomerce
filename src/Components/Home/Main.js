@@ -6,6 +6,7 @@ import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
 import ProductsCategories from './subcomponents/ProductsCategories';
 
+gsap.registerPlugin(CSSRulePlugin)
 export default function Main() {
     let main = useRef(null)
     
@@ -13,13 +14,13 @@ export default function Main() {
         const rule1 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:before")
         const rule2 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:after")
         
-        gsap.to(document.getElementsByTagName("html"),{visibility:"visible"})
         const timeLine = gsap.timeline({defaults:{duration:1}})
         timeLine
             .from(main.querySelector(".mainTitle"),{opacity:0},.4)
             .from(main.querySelectorAll(".mainTxt"),{height:0})
-            .to(main.querySelector(".mainBtn"),{padding: "1rem 4rem",maxWidth: "400px"})
-            .to([rule1,rule2],{visibility:"visible",height:"100%",width:"100%"})
+            .from(main.querySelector(".mainBtn"),{padding: "1rem 0rem",maxWidth: "0px"})
+            .from([rule1,rule2],{visibility:"hidden",duration:.1})
+            .from([rule1,rule2],{height:"0%",width:"0%"})
     },[])
 
     return (

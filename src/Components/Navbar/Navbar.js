@@ -12,7 +12,7 @@ export default function Navbar() {
             <ul>
                 <li>
                     <ul className="products">
-                        <Link to="/#field" className="navLink" >Products</Link>
+                        <Link to="/products" className="navLink" >Products</Link>
                         <div>
                         <li><Link to="/#field" className="subNavLink" >Boots</Link></li>
                         <li><Link to="/#field" className="subNavLink" >Jackets</Link></li>
@@ -25,10 +25,10 @@ export default function Navbar() {
                 <li><Link to="/" className="navLink">Contact</Link></li>
                 <li><Link to="/" className="navLink">Info</Link></li>
             </ul>
-            <div className="cart">
+            <Link to="/basket" className="cart">
                 <img src="pictures/shopping-bag.png"/>
                 <span>0</span>
-            </div>
+            </Link>
         </nav>
     )
 }
