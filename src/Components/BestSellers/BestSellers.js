@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { useRef, useEffect } from 'react'
+import React,{ useRef, useEffect } from 'react'
 import { connect } from 'react-redux'
 import BestSellerItem from './subcomponents/BestSellerItem'
 
