@@ -6,15 +6,23 @@ export default function Products() {
     const [chosenProducts,setChosenProducts] = useState()
     return (
         <main className="productsContainer">
+            <div></div>
+            <div className="search"></div>
             <section className="filter">
                 <div className="price">
-                    <div>Price range</div>
-                    <input value={downPrice} onChange={e=>setDownPrice(e.value)}/>
-                    <span>-</span>
-                    <input value={upPrice} onChange={e=>setUpPrice(e.value)}/>
+                    <h2>Price range</h2>
+                    <div>
+                        <input value={downPrice} onChange={e=>setDownPrice(e.value)}/>
+                        <span>-</span>
+                        <input value={upPrice} onChange={e=>setUpPrice(e.value)}/>
+                    </div>
                 </div>
                 <form>
                     <h2>Select from</h2>
+                    <div>
+                        <input type="radio" name="products" id="All" onChange={e=>setChosenProducts(e.target.id)}/>
+                        All
+                    </div>
                     <div>
                         <input type="radio" name="products" id="Boots" onChange={e=>setChosenProducts(e.target.id)}/>
                         Boots
@@ -33,8 +41,7 @@ export default function Products() {
                     </div>
                 </form>
             </section>
-            <section>
-
+            <section className="products">
             </section>
         </main>
     )
