@@ -19,7 +19,7 @@ html {
 }
 .navbar {
   display: flex;
-  position: fixed;
+  position: relative;
   top: 0;
   overflow: hidden;
   width: 100%;
@@ -324,23 +324,19 @@ legend {
   }
 }
 .productsContainer {
+  margin-top: 1rem;
   display: grid;
   justify-content: center;
-  grid-template: 20% 80% / 25% 75%;
+  grid-template: auto 1fr / 25% 75%;
   width: 100%;
-  height: 100vh;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
+  min-height: 100vh;
+  .stickyScroll {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("./Images/mountain-svg.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
-    z-index: -1;
+    top: 0;
+    justify-items: center;
   }
   .breadcrumb {
     padding-top: 0.2rem;
@@ -382,7 +378,7 @@ legend {
     border: 1px solid grey;
     border-radius: 8px 0 0 8px;
   }
-  .price {
+  .priceRange {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -425,10 +421,57 @@ legend {
     }
   }
   .products {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     height: 100%;
     width: 100%;
     background-color: transparent;
     border: 1px solid grey;
     border-left: none;
+    &:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./Images/mountain-svg.svg");
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-attachment: fixed;
+      z-index: -1;
+    }
+    .productsItem {
+      padding: 0.5rem;
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid grey;
+      border-radius: 8px;
+      width: 31%;
+      img {
+        width: 100%;
+      }
+      .breaker {
+        margin: 0.5rem auto;
+        display: flex;
+        width: 70%;
+        border-bottom: 1px solid $gold;
+      }
+      .price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 3rem;
+        span {
+          color: $gold;
+        }
+      }
+    }
   }
 }

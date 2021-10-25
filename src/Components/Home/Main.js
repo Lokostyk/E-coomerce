@@ -11,6 +11,7 @@ export default function Main() {
     let main = useRef(null)
     
     useEffect(()=>{
+        document.querySelector(".navbar").style.position = "fixed"
         const rule1 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:before")
         const rule2 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:after")
         

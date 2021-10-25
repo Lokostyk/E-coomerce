@@ -1,13 +1,22 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useRef,useState} from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 import ProductsContainer from './subcomponents/ProductsContainer'
 
+gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
+    let filters = useRef(null)
     const [downPrice,setDownPrice] = useState()
     const [upPrice,setUpPrice] = useState()
     const [chosenProducts,setChosenProducts] = useState()
-    console.log(chosenProducts)
+
     useEffect(()=>{
         document.querySelector("#All").checked = true
+        document.querySelector(".navbar").style.position = "relative"
+    },[])
+    //Animations
+    useEffect(()=>{
+
     },[])
     return (
         <main className="productsContainer">
@@ -18,7 +27,8 @@ export default function Products() {
                 <input />
             </section>
             <section className="filter">
-                <div className="price">
+                <div className="stickyScroll" ref={e=>filters=e}>
+                <div className="priceRange">
                     <h2>Price range</h2>
                     <div>
                         <input value={downPrice} onChange={e=>setDownPrice(e.value)}/>
@@ -26,7 +36,7 @@ export default function Products() {
                         <input value={upPrice} onChange={e=>setUpPrice(e.value)}/>
                     </div>
                 </div>
-                <span style={{width: "80%",display:"flex",alignSelf:"center",borderTop:"1px solid grey"}}></span>
+                <span style={{width: "80%",margin:"0 auto",display:"flex",borderTop:"1px solid grey"}}></span>
                 <form>
                     <h2>Select from</h2>
                     <div>
@@ -50,7 +60,7 @@ export default function Products() {
                         Trousers
                     </div>
                 </form>
-                <span style={{width: "80%",display:"flex",alignSelf:"center",borderTop:"1px solid grey"}}></span>
+                <span style={{width: "80%",margin:"0 auto",display:"flex",borderTop:"1px solid grey"}}></span>
                 <form>
                     <h2>Gender</h2>
                     <div>
@@ -66,6 +76,7 @@ export default function Products() {
                         Both
                     </div>
                 </form>
+                </div>
             </section>
             <section className="products">
                 <ProductsContainer />
