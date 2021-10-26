@@ -1,18 +1,30 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { connect } from 'react-redux'
 
-function ProductsContainer({bestSellers}) { 
+function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search}) {
+    const [products,setProducts] = useState(bestSellers)
+    useEffect(() => {
+        console.log(!search)
+        if(!search) setProducts(bestSellers)
+        if(downPrice){
+            setProducts(products.filter(item=>Number(item.price)>=Number(downPrice)))
+        }
+        // if(upPrice){
+        //     setProducts(products.filter(item=>Number(item.price)<=Number(upPrice)))
+        // }
+        if(!search) return
+        const reg = new RegExp(search,"i")
+        setProducts(products.filter(item=>reg.test(item.name)))
+    }, [bestSellers,chosenProducts,downPrice,upPrice,search]) 
     return (
-        bestSellers.map(item=>{
+        products.map(item=>{
             return (
-                <>
-                <div className="productsItem">
+                <div key={item.id} className="productsItem">
                     <img src={`${item.img}`}/>
-                    <p>Eultra warm booster</p>
+                    <p>{item.name}</p>
                     <span className="breaker"></span>
-                    <p className="price">49,99<span>$</span></p>
+                    <p className="price">{item.price}<span>$</span></p>
                 </div>
-                </>
             )
         })
     )

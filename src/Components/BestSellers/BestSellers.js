@@ -12,7 +12,7 @@ function BestSellers(props) {
         const elemHeight = legendRef.getBoundingClientRect().height
         gsap.from(legendRef,{
             scrollTrigger:{trigger:legendRef,start:"top 100%",end:"top 90%",scrub:1},
-            y:`${(elemHeight/2)+2}`,
+            y:`${(elemHeight/2)+3}`,
             duration:.5
             })
     }, [legendRef])

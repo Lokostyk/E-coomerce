@@ -6,13 +6,15 @@ import ProductsContainer from './subcomponents/ProductsContainer'
 gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
     let filters = useRef(null)
-    const [downPrice,setDownPrice] = useState()
-    const [upPrice,setUpPrice] = useState()
+    const [downPrice,setDownPrice] = useState("")
+    const [upPrice,setUpPrice] = useState("")
     const [chosenProducts,setChosenProducts] = useState()
+    const [search,setSearch] = useState("")
 
     useEffect(()=>{
-        document.querySelector("#All").checked = true
-        document.querySelector(".navbar").style.position = "relative"
+        const navbar = document.querySelector(".navbar")
+        navbar.style.position = "relative"
+        document.querySelector("#all").checked = true
     },[])
     //Animations
     useEffect(()=>{
@@ -24,39 +26,39 @@ export default function Products() {
                 <a>Home</a><span>/</span><a>All</a>
             </section>
             <section className="search">
-                <input />
+                <input value={search} onChange={e=>setSearch(e.target.value)}/>
             </section>
             <section className="filter">
                 <div className="stickyScroll" ref={e=>filters=e}>
                 <div className="priceRange">
                     <h2>Price range</h2>
                     <div>
-                        <input value={downPrice} onChange={e=>setDownPrice(e.value)}/>
+                        <input type="number" value={downPrice} onChange={e=>setDownPrice(e.target.value)}/>
                         <span>-</span>
-                        <input value={upPrice} onChange={e=>setUpPrice(e.value)}/>
+                        <input type="number" value={upPrice} onChange={e=>setUpPrice(e.target.value)}/>
                     </div>
                 </div>
                 <span style={{width: "80%",margin:"0 auto",display:"flex",borderTop:"1px solid grey"}}></span>
                 <form>
                     <h2>Select from</h2>
                     <div>
-                        <input type="radio" name="products" id="All" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="all" onChange={e=>setChosenProducts(e.target.id)}/>
                         All
                     </div>
                     <div>
-                        <input type="radio" name="products" id="Boots" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="boots" onChange={e=>setChosenProducts(e.target.id)}/>
                         Boots
                     </div>
                     <div>
-                        <input type="radio" name="products" id="Jackets" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="jackets" onChange={e=>setChosenProducts(e.target.id)}/>
                         Jackets
                     </div>
                     <div>
-                        <input type="radio" name="products" id="T-shirts" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="t-shirts" onChange={e=>setChosenProducts(e.target.id)}/>
                         T-shirts
                     </div>
                     <div>
-                        <input type="radio" name="products" id="Trousers" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="trousers" onChange={e=>setChosenProducts(e.target.id)}/>
                         Trousers
                     </div>
                 </form>
@@ -79,7 +81,7 @@ export default function Products() {
                 </div>
             </section>
             <section className="products">
-                <ProductsContainer />
+                <ProductsContainer chosenProducts={chosenProducts} downPrice={downPrice} upPrice={upPrice} search={search}/>
             </section>
         </main>
     )
