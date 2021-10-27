@@ -6,10 +6,11 @@ import ProductsContainer from './subcomponents/ProductsContainer'
 gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
     let filters = useRef(null)
+    const [search,setSearch] = useState("")
     const [downPrice,setDownPrice] = useState("")
     const [upPrice,setUpPrice] = useState("")
     const [chosenProducts,setChosenProducts] = useState()
-    const [search,setSearch] = useState("")
+    const [gender,setGender] = useState()
 
     useEffect(()=>{
         const navbar = document.querySelector(".navbar")
@@ -18,7 +19,7 @@ export default function Products() {
     },[])
     //Animations
     useEffect(()=>{
-
+        
     },[])
     return (
         <main className="productsContainer">
@@ -42,7 +43,7 @@ export default function Products() {
                 <form>
                     <h2>Select from</h2>
                     <div>
-                        <input type="radio" name="products" id="all" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="all" onChange={e=>setChosenProducts(e.target.id)} defaultChecked/>
                         All
                     </div>
                     <div>
@@ -66,22 +67,22 @@ export default function Products() {
                 <form>
                     <h2>Gender</h2>
                     <div>
-                        <input type="radio" name="gender" id="Male"/>
+                        <input type="radio" name="gender" id="male" onChange={e=>setGender(e.target.id)}/>
                         Male
                     </div>
                     <div>
-                        <input type="radio" name="gender" id="Female"/>
+                        <input type="radio" name="gender" id="female" onChange={e=>setGender(e.target.id)}/>
                         Female
                     </div>
                     <div>
-                        <input type="radio" name="gender" id="Both"/>
+                        <input type="radio" name="gender" id="both" onChange={e=>setGender(e.target.id)} defaultChecked/>
                         Both
                     </div>
                 </form>
                 </div>
             </section>
             <section className="products">
-                <ProductsContainer chosenProducts={chosenProducts} downPrice={downPrice} upPrice={upPrice} search={search}/>
+                <ProductsContainer chosenProducts={chosenProducts} downPrice={downPrice} upPrice={upPrice} search={search} gender={gender}/>
             </section>
         </main>
     )

@@ -1,23 +1,29 @@
 import React,{useEffect,useState} from 'react'
 import { connect } from 'react-redux'
 
-function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search}) {
-    const [products,setProducts] = useState(bestSellers)
+function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search,gender}) {
+    const [productsAfterSearch,setProductsAfterSearch] = useState(bestSellers)
+    const [finalProducts,setFinalProducts] = useState([])
+
+    //Search and price range
     useEffect(() => {
-        console.log(!search)
-        if(!search) setProducts(bestSellers)
-        if(downPrice){
-            setProducts(products.filter(item=>Number(item.price)>=Number(downPrice)))
-        }
-        // if(upPrice){
-        //     setProducts(products.filter(item=>Number(item.price)<=Number(upPrice)))
-        // }
-        if(!search) return
-        const reg = new RegExp(search,"i")
-        setProducts(products.filter(item=>reg.test(item.name)))
-    }, [bestSellers,chosenProducts,downPrice,upPrice,search]) 
+        const dPrice = downPrice?Number(downPrice):0
+        const uPrice = upPrice?Number(upPrice):Infinity
+        const searchVar = search?search:""
+        const reg = new RegExp(searchVar,"i")
+
+        setProductsAfterSearch(bestSellers.filter(item=>(Number(item.price)>=dPrice&&Number(item.price)<=uPrice&&reg.test(item.name))))
+    }, [bestSellers,downPrice,upPrice,search,chosenProducts,gender])
+    //Selcet from and gender
+    useEffect(()=>{
+        const cProducts = chosenProducts?chosenProducts:"all"
+        const genderVar = gender?gender:"both"
+        setFinalProducts(
+            productsAfterSearch.filter(item=>item.category===cProducts||cProducts==="all")
+            .filter(item=>item.gender===genderVar||genderVar==="both"))
+    },[chosenProducts,gender,productsAfterSearch])
     return (
-        products.map(item=>{
+        finalProducts.map(item=>{
             return (
                 <div key={item.id} className="productsItem">
                     <img src={`${item.img}`}/>
