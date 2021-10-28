@@ -5,32 +5,33 @@ import ProductsContainer from './subcomponents/ProductsContainer'
 
 gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
-    let filters = useRef(null)
+    let animationRef = useRef(null)
     const [search,setSearch] = useState("")
     const [downPrice,setDownPrice] = useState("")
     const [upPrice,setUpPrice] = useState("")
     const [chosenProducts,setChosenProducts] = useState()
     const [gender,setGender] = useState()
 
+    window.scrollTo({top:0,behavior:"smooth"})
     useEffect(()=>{
-        const navbar = document.querySelector(".navbar")
-        navbar.style.position = "relative"
         document.querySelector("#all").checked = true
     },[])
     //Animations
     useEffect(()=>{
-        
+        const animationFilter = animationRef.querySelector(".search")
+        console.log(animationFilter.style)
+        gsap.to(animationFilter,{scrollTrigger:{trigger:animationFilter,start:"top top",scrub:true},width:"40%",border:"1px solid grey",borderRadius:"2rem"})
     },[])
     return (
-        <main className="productsContainer">
+        <main className="productsContainer" ref={e=>animationRef=e}>
             <section className="breadcrumb">
                 <a>Home</a><span>/</span><a>All</a>
             </section>
-            <section className="search">
+            <section className="search" style={{width:"90%"}}>
                 <input value={search} onChange={e=>setSearch(e.target.value)}/>
             </section>
             <section className="filter">
-                <div className="stickyScroll" ref={e=>filters=e}>
+                <div className="stickyScroll">
                 <div className="priceRange">
                     <h2>Price range</h2>
                     <div>

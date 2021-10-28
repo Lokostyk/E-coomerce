@@ -1,4 +1,5 @@
 import React,{useEffect} from "react";
+import gsap from "gsap";
 import { Provider } from 'react-redux'
 import store from "./Redux/store"
 import {Route,useLocation} from "react-router-dom"
@@ -12,9 +13,13 @@ function App() {
   const {hash,pathname} = useLocation()
 
   useEffect(()=>{
+    const navbar = document.querySelector(".navbar").style
     if(pathname !== "/"){
-      document.querySelector(".navbar").style.maxHeight = "400px"
-      document.querySelector(".navbar").style.overflow = "visible"
+      navbar.maxHeight = "200px"
+      navbar.overflow = "visible"
+      navbar.position = "relative"
+    }else{
+      navbar.position = "fixed"
     }
     if(hash !== ""){
       const element = document.querySelector(`${hash}`)
@@ -27,7 +32,7 @@ function App() {
     document.addEventListener("scroll",addNav)
   },[hash,pathname])
   const addNav = () =>{
-    document.querySelector(".navbar").style.maxHeight = "200px"
+    gsap.to(document.querySelector(".navbar"),{duration:1,maxHeight:"200px",overflow:"visible"})
     document.removeEventListener("scroll",addNav)
   }
   return (

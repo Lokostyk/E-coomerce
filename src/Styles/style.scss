@@ -31,7 +31,6 @@ html {
   max-height: 0px;
   background-color: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid black;
-  transition: 1s all;
   backdrop-filter: blur(8px);
   z-index: 2;
   .logo {
@@ -360,10 +359,13 @@ legend {
     display: flex;
     justify-content: center;
     justify-self: center;
+    position: sticky;
+    top: 10px;
     width: 90%;
     border-bottom: none;
     border-radius: 2rem 2rem 0 0;
     background-color: #fff;
+    transition: 0.5s all;
     input {
       padding: 0.3rem;
       background-color: #f5f5f5;
@@ -433,6 +435,7 @@ legend {
     background-color: transparent;
     border: 1px solid grey;
     border-left: none;
+    height: 200vh;
     &:before {
       content: "";
       position: fixed;

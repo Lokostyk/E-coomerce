@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import BestSellerItem from './subcomponents/BestSellerItem'
 
 gsap.registerPlugin(ScrollTrigger)
-
 function BestSellers(props) {
     let legendRef = useRef(null)
     useEffect(() => {
