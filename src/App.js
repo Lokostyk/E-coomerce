@@ -8,6 +8,7 @@ import Main from "./Components/Home/Main"
 import Navbar from "./Components/Navbar/Navbar";
 import Basket from "./Components/Basket/Basket";
 import Products from "./Components/Products/Products";
+import Product from "./Components/ProductPage/Product";
 
 function App() {
   const {hash,pathname} = useLocation()
@@ -21,14 +22,6 @@ function App() {
     }else{
       navbar.position = "fixed"
     }
-    if(hash !== ""){
-      const element = document.querySelector(`${hash}`)
-      if(element) {
-        element.scrollIntoView({behavior:"smooth"})
-      }
-    }else {
-      window.scrollTo(0,0)
-    }
     document.addEventListener("scroll",addNav)
   },[hash,pathname])
   const addNav = () =>{
@@ -40,7 +33,8 @@ function App() {
         <Navbar />
         <Route path="/" exact component={Main} />
         <Route path="/basket" component={Basket}/>
-        <Route path="/products" component={Products}/>
+        <Route path="/products" exact component={Products}/>
+        <Route path="/products/:id"  component={Product}/>
       </Provider>
   );
 }

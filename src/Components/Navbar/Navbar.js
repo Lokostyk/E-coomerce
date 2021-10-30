@@ -5,19 +5,19 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <Link className="logo" to="/">
-                <img src="pictures/logo.png" />
+                <img src="/pictures/logo.png" />
                 <div/>
                 <p>JourneyEmpire</p>
             </Link>
             <ul>
                 <li>
                     <ul className="products">
-                        <Link to="/products" className="navLink" >Products</Link>
+                        <Link to="/products#all" className="navLink" >Products</Link>
                         <div>
-                        <li><Link to="/#field" className="subNavLink" >Boots</Link></li>
-                        <li><Link to="/#field" className="subNavLink" >Jackets</Link></li>
-                        <li><Link to="/#field" className="subNavLink" >T-shirts</Link></li>
-                        <li><Link to="/#field" className="subNavLink" >Trousers</Link></li>
+                        <li><Link to="/products#boots" className="subNavLink" >Boots</Link></li>
+                        <li><Link to="/products#jackets" className="subNavLink" >Jackets</Link></li>
+                        <li><Link to="/products#t-shirts" className="subNavLink" >T-shirts</Link></li>
+                        <li><Link to="/products#trousers" className="subNavLink" >Trousers</Link></li>
                         </div>
                     </ul>
                 </li>
@@ -26,7 +26,7 @@ export default function Navbar() {
                 <li><Link to="/" className="navLink">Info</Link></li>
             </ul>
             <Link to="/basket" className="cart">
-                <img src="pictures/shopping-bag.png"/>
+                <img src="/pictures/shopping-bag.png"/>
                 <span>0</span>
             </Link>
         </nav>

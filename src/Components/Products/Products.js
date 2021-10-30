@@ -2,24 +2,30 @@ import React,{useEffect,useRef,useState} from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import ProductsContainer from './subcomponents/ProductsContainer'
+import { useLocation } from 'react-router'
 
 gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
     let animationRef = useRef(null)
+    const {hash} = useLocation()
     const [search,setSearch] = useState("")
     const [downPrice,setDownPrice] = useState("")
     const [upPrice,setUpPrice] = useState("")
     const [chosenProducts,setChosenProducts] = useState()
     const [gender,setGender] = useState()
-
-    window.scrollTo({top:0,behavior:"smooth"})
+    
     useEffect(()=>{
-        document.querySelector("#all").checked = true
-    },[])
+        window.scrollTo({top:0,behavior:"smooth"})
+    },[chosenProducts])
+    useEffect(()=>{
+        window.scrollTo(0,0)
+        if(!hash) return
+        document.querySelector(`${hash}`).checked = true
+        setChosenProducts(hash.slice(1))
+    },[hash])
     //Animations
     useEffect(()=>{
         const animationFilter = animationRef.querySelector(".search")
-        console.log(animationFilter.style)
         gsap.to(animationFilter,{scrollTrigger:{trigger:animationFilter,start:"top top",scrub:true},width:"40%",border:"1px solid grey",borderRadius:"2rem"})
     },[])
     return (
@@ -44,23 +50,23 @@ export default function Products() {
                 <form>
                     <h2>Select from</h2>
                     <div>
-                        <input type="radio" name="products" id="all" onChange={e=>setChosenProducts(e.target.id)} defaultChecked/>
+                        <input type="radio" name="products" id="all" onClick={e=>setChosenProducts(e.target.id)} defaultChecked/>
                         All
                     </div>
                     <div>
-                        <input type="radio" name="products" id="boots" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="boots" onClick={e=>setChosenProducts(e.target.id)}/>
                         Boots
                     </div>
                     <div>
-                        <input type="radio" name="products" id="jackets" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="jackets" onClick={e=>setChosenProducts(e.target.id)}/>
                         Jackets
                     </div>
                     <div>
-                        <input type="radio" name="products" id="t-shirts" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="t-shirts" onClick={e=>setChosenProducts(e.target.id)}/>
                         T-shirts
                     </div>
                     <div>
-                        <input type="radio" name="products" id="trousers" onChange={e=>setChosenProducts(e.target.id)}/>
+                        <input type="radio" name="products" id="trousers" onClick={e=>setChosenProducts(e.target.id)}/>
                         Trousers
                     </div>
                 </form>
@@ -68,15 +74,15 @@ export default function Products() {
                 <form>
                     <h2>Gender</h2>
                     <div>
-                        <input type="radio" name="gender" id="male" onChange={e=>setGender(e.target.id)}/>
+                        <input type="radio" name="gender" id="male" onClick={e=>setGender(e.target.id)}/>
                         Male
                     </div>
                     <div>
-                        <input type="radio" name="gender" id="female" onChange={e=>setGender(e.target.id)}/>
+                        <input type="radio" name="gender" id="female" onClick={e=>setGender(e.target.id)}/>
                         Female
                     </div>
                     <div>
-                        <input type="radio" name="gender" id="both" onChange={e=>setGender(e.target.id)} defaultChecked/>
+                        <input type="radio" name="gender" id="both" onClick={e=>setGender(e.target.id)} defaultChecked/>
                         Both
                     </div>
                 </form>

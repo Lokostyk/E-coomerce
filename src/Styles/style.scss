@@ -252,19 +252,19 @@ legend {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   background-image: url("./Images/wave-bottom.svg"),
     url("./Images/wave-top.svg");
   background-repeat: no-repeat no-repeat;
   background-position: bottom, top;
   background-color: #f5f5f5;
-  width: 100%;
   h1 {
     margin-top: 2rem;
     width: 100%;
     font-size: 3rem;
     text-align: center;
   }
-  div {
+  a {
     padding: 1rem 2rem 2rem 2rem;
     margin: 4rem 5%;
     display: flex;
@@ -284,9 +284,10 @@ legend {
       border-radius: 10px;
     }
     h2 {
-      font-size: 2.2rem;
-      text-align: center;
       padding: 0.1rem 0 0.8rem 0;
+      text-align: center;
+      font-size: 2.2rem;
+      color: black;
     }
   }
 }
@@ -479,5 +480,13 @@ legend {
         }
       }
     }
+  }
+}
+.productContainer {
+  display: flex;
+  width: 100vw;
+  background-color: #fff;
+  .product {
+    height: 80%;
   }
 }

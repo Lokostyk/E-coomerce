@@ -1,6 +1,7 @@
 import React,{useEffect,useRef} from 'react'
 import gsap from 'gsap'
 import { CSSRulePlugin } from "gsap/all";
+import {useLocation} from "react-router-dom"
 
 import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
@@ -9,12 +10,24 @@ import ProductsCategories from './subcomponents/ProductsCategories';
 gsap.registerPlugin(CSSRulePlugin)
 export default function Main() {
     let main = useRef(null)
-    
+    const {hash,pathname} = useLocation()
+
+    useEffect(()=>{
+        if(hash !== ""){
+            const element = document.querySelector(`${hash}`)
+            if(element) {
+                element.scrollIntoView({behavior:"smooth"})
+            }
+        }else {
+        window.scrollTo(0,0)
+        }
+    },[hash,pathname])
+    //Animations
     useEffect(()=>{
         document.querySelector(".navbar").style.position = "fixed"
         const rule1 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:before")
         const rule2 = CSSRulePlugin.getRule(".mainBackground .mainContent .mainBtn:after")
-        
+    
         const timeLine = gsap.timeline({defaults:{duration:1}})
         timeLine
             .from(main.querySelector(".mainTitle"),{opacity:0},.4)

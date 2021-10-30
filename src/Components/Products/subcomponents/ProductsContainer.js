@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search,gender}) {
     const [productsAfterSearch,setProductsAfterSearch] = useState(bestSellers)
@@ -25,12 +26,12 @@ function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search,
     return (
         finalProducts.map(item=>{
             return (
-                <div key={item.id} className="productsItem">
+                <Link to="/products/1" key={item.id} className="productsItem">
                     <img src={`${item.img}`}/>
                     <p>{item.name}</p>
                     <span className="breaker"></span>
                     <p className="price">{item.price}<span>$</span></p>
-                </div>
+                </Link>
             )
         })
     )
