@@ -483,10 +483,65 @@ legend {
   }
 }
 .productContainer {
+  flex-grow: 1;
   display: flex;
-  width: 100vw;
-  background-color: #fff;
   .product {
-    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #fff;
+    .productInfo {
+      display: flex;
+      flex-direction: column;
+      height: 80%;
+      z-index: 0;
+      h1 {
+        margin: 5rem 0 0.7rem 0;
+        font-size: 3.5rem;
+      }
+      p {
+        font-size: 2.5rem;
+        &:first-of-type {
+          margin-bottom: 3rem;
+        }
+        &:last-of-type {
+          margin-bottom: 0.5rem;
+        }
+      }
+      input {
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        opacity: 0.6;
+        border-radius: 50%;
+      }
+      .addBtn {
+        margin: 4rem 0;
+        padding: 1.5rem 3rem;
+        align-self: flex-start;
+        position: relative;
+        border: none;
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        background-color: #d7d7d7;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 102%;
+          height: 110%;
+          background-color: $gold;
+          transform: rotate(-4deg) translateX(5px);
+          z-index: -1;
+        }
+      }
+    }
+    img {
+      height: 80vh;
+    }
   }
 }

@@ -27,7 +27,7 @@ function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search,
         finalProducts.map(item=>{
             return (
                 <Link to="/products/1" key={item.id} className="productsItem">
-                    <img src={`${item.img}`}/>
+                    <img src={`${item.imgs[0]}`}/>
                     <p>{item.name}</p>
                     <span className="breaker"></span>
                     <p className="price">{item.price}<span>$</span></p>

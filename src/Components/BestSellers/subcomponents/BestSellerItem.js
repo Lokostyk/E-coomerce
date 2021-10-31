@@ -5,7 +5,7 @@ export default function BestSellerItem(props) {
 
     return (
         <div className="itemPreview">
-            <img src={item.img}/>
+            <img src={item.imgs[0]}/>
             <div></div>
             <span>{item.price}$</span>
         </div>
