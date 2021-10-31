@@ -511,11 +511,15 @@ legend {
       }
       input {
         appearance: none;
+        margin: 0.2rem 0.8rem 0 0;
         width: 40px;
         height: 40px;
         background-color: red;
         opacity: 0.6;
         border-radius: 50%;
+        &:checked {
+          opacity: 1;
+        }
       }
       .addBtn {
         margin: 4rem 0;
@@ -536,7 +540,11 @@ legend {
           height: 110%;
           background-color: $gold;
           transform: rotate(-4deg) translateX(5px);
+          transition: 0.5s all;
           z-index: -1;
+        }
+        &:hover:before {
+          transform: rotate(4deg) translate(7px, -9.5px);
         }
       }
     }
