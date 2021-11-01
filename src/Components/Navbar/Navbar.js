@@ -1,7 +1,10 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import { useSelector } from "react-redux"
 
 export default function Navbar() {
+    const basketItemCount = useSelector((state)=>state.basket.contents.length)
+
     return (
         <nav className="navbar">
             <Link className="logo" to="/">
@@ -27,7 +30,7 @@ export default function Navbar() {
             </ul>
             <Link to="/basket" className="cart">
                 <img src="/pictures/shopping-bag.png"/>
-                <span>0</span>
+                <span>{basketItemCount}</span>
             </Link>
         </nav>
     )

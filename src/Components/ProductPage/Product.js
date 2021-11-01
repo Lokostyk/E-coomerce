@@ -1,13 +1,16 @@
 import React,{useEffect, useRef, useState} from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
 import gsap from 'gsap'
 
-export default function Product(props) {
+import { ADD_TO_BASKET } from '../../Redux/basketTypes'
+
+export default function Product() {
     let img = useRef(null)
     const {pathname} = useLocation()
     const id = Number(pathname.slice(pathname.lastIndexOf("/")+1))
-    const productData = useSelector((state)=>state.bestSellers.filter(item=>item.id === id)[0])
+    const productData = useSelector((state)=>state.bestSeller.bestSellers.filter(item=>item.id === id)[0])
+    const dispatch = useDispatch()
     const [currentImg,setCurrentImg] = useState("/pictures/polar-black.jpg")
 
     useEffect(()=>{
@@ -27,7 +30,7 @@ export default function Product(props) {
                         })}
                     
                     </form>
-                    <button className="addBtn" onClick={()=>setCurrentImg("/pictures/trousers.jpg")}>Add to Bag</button>
+                    <button className="addBtn" onClick={()=>dispatch({type:ADD_TO_BASKET,payload:{id,currentImg}})}>Add to Bag</button>
                 </div>
             </div>
         </div>

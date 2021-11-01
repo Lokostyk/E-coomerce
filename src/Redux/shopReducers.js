@@ -5,7 +5,3 @@ export const bestSellersReducer = (state = bestSellersState,action)=>{
         default: return state
     }
 }
-
-export const basketReducer = (()=>{
-
-})
