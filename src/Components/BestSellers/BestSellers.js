@@ -27,7 +27,7 @@ function BestSellers(props) {
 
 const mapStateToProps = state => {
     return {
-        bestSellers: state.bestSellers
+        bestSellers: state.bestSeller.bestSellers
     }
 }
 

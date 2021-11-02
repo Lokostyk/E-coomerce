@@ -26,7 +26,7 @@ export default function Product() {
                     <p style={{fontWeight:"bold"}}>Colors</p>
                     <form>
                         {productData.colors.map((item,index)=>{
-                            return (<input type="radio" name="colors" onClick={()=>setCurrentImg(productData.imgs[index])} style={{backgroundColor:item}}/>)
+                            return (<input key={item} type="radio" name="colors" onClick={()=>setCurrentImg(productData.imgs[index])} style={{backgroundColor:item}}/>)
                         })}
                     
                     </form>
