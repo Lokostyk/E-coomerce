@@ -1,5 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
+
+import BasketItem from "./subcomponents/BasketItem"
 import EmptyBasket from "./subcomponents/EmptyBasket"
 
 export default function Basket() {
@@ -8,16 +10,17 @@ export default function Basket() {
     return (
         <div className="basketContainer">
             <div className="preview">
-                <p>YOOOO</p>
-                <div className="square"/>
-                <p>YOOOO
-                </p>
-                <div className="square"/>
-                <p>YOOOO</p>
+                <p>Your Bag</p>
+                <p>Payment {"&"} Delivery</p>
+                <p>Ready</p>
             </div>
             <div className="basket">
-                <div className="basketItem">ytyt</div>
-
+                {basket.length===0?
+                    <EmptyBasket />:
+                    basket.map((item)=>{
+                        return <BasketItem item={item}/>
+                    })
+                }
             </div>
             <div className="summary">
                 <h1>Summary</h1>
@@ -28,9 +31,6 @@ export default function Basket() {
                 </div>
                 <button>Checkout</button>
             </div>
-            {/* {basket.length===0?
-                <EmptyBasket />:""
-            } */}
         </div>
     )
 }

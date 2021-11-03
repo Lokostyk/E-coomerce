@@ -563,7 +563,7 @@ legend {
   flex-grow: 1;
   display: grid;
   justify-self: center;
-  grid-template: 15% 75% / 70% 30%;
+  grid-template: 10vh 1fr / 70% 30%;
   background-color: #fff;
   .preview {
     margin: auto 0;
@@ -571,36 +571,80 @@ legend {
     justify-self: center;
     grid-column: 1/3;
     overflow: hidden;
-    border: 1px solid grey;
-    border-left: none;
-    border-right: none;
     p {
-      padding: 0.2rem 1rem;
+      padding: 1rem 2rem;
       display: flex;
-      font-size: 2rem;
+      font-size: 1.8rem;
+      border: 3px solid #dad8d8;
+      border-left: none;
+      border-right: none;
       z-index: 1;
       &:first-of-type {
-        background-color: $gold;
+        color: $gold;
+        border: 3px solid $gold;
+        border-left: none;
+        border-right: none;
       }
-    }
-    .square {
-      margin-left: -35px;
-      display: flex;
-      align-self: flex-start;
-      height: 50px;
-      width: 50px;
-      border: 1px solid grey;
-      border-left: none;
-      border-bottom: none;
-      transform: rotate(45deg);
-      z-index: 0;
     }
   }
   .basket {
+    .itemContainer {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      width: 80%;
+      font-size: 2.2rem;
+      border: 1px solid grey;
+      border-bottom: none;
+      border-radius: 2.5rem 0 0 2.5rem;
+      &:last-child {
+        border-bottom: 1px solid grey;
+      }
+      button {
+        margin: 0 0.7rem;
+        height: 30px;
+        background-color: inherit;
+        border: none;
+        &:first-of-type {
+          margin-left: auto;
+        }
+        &:last-of-type {
+          height: 45px;
+        }
+        .controlBtn {
+          height: 30px;
+        }
+        .deleteBtn {
+          height: 45px;
+        }
+      }
+      .productImage {
+        padding: 0.2rem 1.5rem;
+        height: 100px;
+      }
+      input {
+        height: 40px;
+        font-size: 2rem;
+        width: 55px;
+        text-align: center;
+        border: 1px solid grey;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+      .price {
+        margin: 0 1rem;
+      }
+    }
   }
   .summary {
     margin-top: 10%;
     display: flex;
+    position: sticky;
+    top: 20%;
+    left: 0;
     flex-direction: column;
     h1 {
       font-size: 3.5rem;
