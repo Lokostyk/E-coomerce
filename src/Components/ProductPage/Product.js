@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import React,{useEffect, useRef, useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
@@ -30,7 +31,7 @@ export default function Product() {
                         })}
                     
                     </form>
-                    <button className="addBtn" onClick={()=>dispatch({type:ADD_TO_BASKET,payload:{id,currentImg}})}>Add to Bag</button>
+                    <button className="addBtn" onClick={()=>dispatch({type:ADD_TO_BASKET,payload:{id:nanoid(),currentImg,quantity:1,name:productData.name,price:productData.price}})}>Add to Bag</button>
                 </div>
             </div>
         </div>

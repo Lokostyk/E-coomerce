@@ -435,7 +435,6 @@ legend {
   .products {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
     flex-wrap: wrap;
     background-color: transparent;
     border: 1px solid grey;
@@ -588,6 +587,15 @@ legend {
     }
   }
   .basket {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    .emptyBasketImg {
+      margin: 0 auto;
+      justify-self: center;
+      width: 70%;
+      height: 70%;
+    }
     .itemContainer {
       margin: 0 auto;
       display: flex;
@@ -616,6 +624,11 @@ legend {
         }
         .deleteBtn {
           height: 45px;
+          opacity: 0.5;
+          transition: 0.3s all;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
       .productImage {

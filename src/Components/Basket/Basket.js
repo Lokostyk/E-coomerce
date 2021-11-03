@@ -2,11 +2,10 @@ import React from "react"
 import { useSelector } from "react-redux"
 
 import BasketItem from "./subcomponents/BasketItem"
-import EmptyBasket from "./subcomponents/EmptyBasket"
 
 export default function Basket() {
     const basket = useSelector((state)=>state.basket.contents)
-    
+
     return (
         <div className="basketContainer">
             <div className="preview">
@@ -16,9 +15,9 @@ export default function Basket() {
             </div>
             <div className="basket">
                 {basket.length===0?
-                    <EmptyBasket />:
+                    <img src="/pictures/emptyCart.png" className="emptyBasketImg"/>:
                     basket.map((item)=>{
-                        return <BasketItem item={item}/>
+                        return <BasketItem key={item.id} item={item}/>
                     })
                 }
             </div>
