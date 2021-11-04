@@ -1,4 +1,8 @@
-import {ADD_TO_BASKET,REOMVE_FROM_BASKET,INCREASE_ITEM_QUANTITY} from "./basketTypes"
+import {
+    ADD_TO_BASKET,
+    REOMVE_FROM_BASKET,
+    INCREASE_ITEM_QUANTITY,
+} from "./basketTypes"
 
 const initialState = {
     contents:[]

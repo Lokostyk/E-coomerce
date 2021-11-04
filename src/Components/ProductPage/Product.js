@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import React,{useEffect, useRef, useState} from 'react'
+import React,{ useEffect, useRef, useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
 import gsap from 'gsap'
@@ -8,6 +8,7 @@ import { ADD_TO_BASKET } from '../../Redux/basketTypes'
 
 export default function Product() {
     let img = useRef(null)
+
     const {pathname} = useLocation()
     const id = Number(pathname.slice(pathname.lastIndexOf("/")+1))
     const productData = useSelector((state)=>state.bestSeller.bestSellers.filter(item=>item.id === id)[0])
