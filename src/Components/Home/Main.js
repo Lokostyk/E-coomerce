@@ -33,7 +33,7 @@ export default function Main() {
         timeLine
             .from(main.querySelector(".mainTitle"),{opacity:0},.4)
             .from(main.querySelectorAll(".mainTxt"),{height:0})
-            .from(main.querySelector(".mainBtn"),{padding: "1rem 0rem",maxWidth: "0px"})
+            .from(main.querySelector(".mainBtn"),{paddingLeft: "0rem",paddingRight: "0rem",maxWidth: "0px"})
             .from([rule1,rule2],{visibility:"hidden",duration:.1})
             .from([rule1,rule2],{height:"0%",width:"0%"})
     },[])
