@@ -2,6 +2,7 @@ import {
     ADD_TO_BASKET,
     REOMVE_FROM_BASKET,
     INCREASE_ITEM_QUANTITY,
+    FROM_STORAGE_TO_BASKET
 } from "./basketTypes"
 
 const initialState = {
@@ -24,6 +25,9 @@ export const basketReducer = (state = initialState,action) => {
                     return [...arr,item]
                 }
             },[])]
+        }
+        case FROM_STORAGE_TO_BASKET: return {
+            contents:[...action.payload]
         }
         default: return state
     }

@@ -3,7 +3,7 @@ import gsap from "gsap";
 import {Route,useLocation} from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 
-import { ADD_TO_BASKET } from "./Redux/basketTypes";
+import { FROM_STORAGE_TO_BASKET } from "./Redux/basketTypes";
 
 import Main from "./Components/Home/Main"
 import Navbar from "./Components/Navbar/Navbar";
@@ -19,7 +19,7 @@ function App() {
   useEffect(()=>{
     const basketFromStorage = JSON.parse(window.localStorage.getItem("basket"))
     if(basket.length === 0 && basketFromStorage){
-      dispatch({type:ADD_TO_BASKET,payload:basketFromStorage})
+      dispatch({type:FROM_STORAGE_TO_BASKET,payload:basketFromStorage})
     }
   },[])
   useEffect(()=>{

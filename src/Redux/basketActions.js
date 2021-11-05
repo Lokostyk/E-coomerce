@@ -2,6 +2,7 @@ import {
     ADD_TO_BASKET,
     REOMVE_FROM_BASKET,
     INCREASE_ITEM_QUANTITY,
+    FROM_STORAGE_TO_BASKET
 } from "./basketTypes"
 
 export const addToBasket = (id,img,quantity,price) => {
@@ -30,5 +31,11 @@ export const increaseItemQuantity = (id,quantity) => {
             id,
             quantity
         }
+    }
+}
+export const fromsStorageToBasket = (basket) => {
+    return {
+        type: FROM_STORAGE_TO_BASKET,
+        payload:basket
     }
 }
