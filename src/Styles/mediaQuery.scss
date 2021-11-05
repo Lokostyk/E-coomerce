@@ -1,0 +1,200 @@
+@media screen and (max-width: 1800px) {
+  .aboutUs article {
+    p {
+      font-size: 1.5rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .navbar {
+    .navLink {
+      padding: 1rem 2.3rem;
+      font-size: 1.5rem;
+    }
+    .logo {
+      img {
+        height: 40px;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .cart {
+      img {
+        height: 60px;
+      }
+      span {
+        font-size: 1.1rem;
+        min-height: 25px;
+        min-width: 25px;
+      }
+    }
+    ul .products .subNavLink {
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      &:hover {
+        padding-inline-start: 2rem;
+      }
+    }
+  }
+  .mainBackground .mainContent .mainTitle {
+    font-size: 4rem;
+    margin-bottom: 0rem;
+  }
+  .mainBackground .mainContent .mainTxt {
+    margin: 1.25rem;
+    font-size: 2.5rem;
+    &:first-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+  .mainBackground .mainContent .mainBtn {
+    padding: 1rem 2.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    &:after {
+      border-bottom: 4px solid white;
+      border-right: 4px solid white;
+    }
+    &::before {
+      border-left: 4px solid white;
+      border-top: 4px solid white;
+    }
+  }
+  .bestSellers {
+    margin-top: -1.1rem;
+    font-size: 1.8rem;
+  }
+  .itemPreview {
+    margin: 0;
+    img {
+      height: 200px;
+    }
+  }
+  .categories {
+    h1 {
+      font-size: 1.8rem;
+    }
+    a {
+      padding: 1.5rem 1rem;
+      margin: 2rem 8% 2rem 3%;
+      &:nth-last-of-type(even) {
+        margin: 2rem 3% 2rem 8%;
+      }
+      &:hover {
+        transform: scale(1.02);
+      }
+      img {
+        height: 15rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .aboutUs article {
+    margin: 0.5rem 0;
+    &:nth-last-of-type(even) {
+      margin: 0.5rem 0;
+      img {
+        height: 30rem;
+      }
+      & div {
+        margin-left: 0;
+      }
+    }
+    div {
+      margin-right: 0;
+      padding: 0 3rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+    img {
+      height: 20rem;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .navbar {
+    .navLink {
+      padding: 1.1rem 2.3rem;
+      font-size: 1.2rem;
+    }
+    .logo {
+      img {
+        height: 30px;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .cart {
+      img {
+        height: 45px;
+      }
+      span {
+        font-size: 1rem;
+        min-height: 20px;
+        min-width: 20px;
+      }
+    }
+  }
+  .aboutUs article {
+    margin: 1rem 0;
+    &:nth-child(even) img {
+      height: 20rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    img {
+      height: 15rem;
+    }
+  }
+  .mainBackground .mainContent .mainTitle {
+    font-size: 3rem;
+  }
+  .mainBackground .mainContent .mainTxt {
+    margin: 1rem;
+    font-size: 2rem;
+    &:first-of-type {
+      margin-bottom: 1.3rem;
+    }
+  }
+  .mainBackground .mainContent .mainBtn {
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-self: flex-start;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    &:after {
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+    }
+    &::before {
+      border-left: 3px solid white;
+      border-top: 3px solid white;
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .navbar {
+    .navLink {
+      padding: 1.1rem 1.2rem;
+      font-size: 1.2rem;
+    }
+    ul .products .subNavLink {
+      padding: 1rem 1rem;
+      font-size: 1.1rem;
+      &:hover {
+        padding-inline-start: 1.3rem;
+      }
+    }
+  }
+}

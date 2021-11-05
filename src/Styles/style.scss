@@ -51,10 +51,10 @@ html {
     }
     img {
       margin: 0 0.1rem 0 1rem;
-      height: 70px;
+      height: 60px;
     }
     p {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 800;
       margin-left: 10px;
     }
@@ -103,8 +103,8 @@ html {
   }
   .navLink {
     position: relative;
-    padding: 1.9rem 3.75rem;
-    font-size: 2rem;
+    padding: 1.4rem 3.75rem;
+    font-size: 1.7rem;
     color: white;
     text-decoration: none;
     background-image: linear-gradient(white, white);
@@ -120,9 +120,10 @@ html {
 
   .cart {
     margin-right: 0.5rem;
+    align-self: center;
     position: relative;
     img {
-      height: 100px;
+      height: 80px;
     }
     span {
       position: absolute;
@@ -131,9 +132,9 @@ html {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 35px;
-      min-width: 35px;
-      font-size: 1.5rem;
+      min-height: 30px;
+      min-width: 30px;
+      font-size: 1.3rem;
       background-color: #fff;
       color: black;
       border-radius: 50%;
@@ -225,7 +226,7 @@ html {
 }
 .bestSellers {
   display: flex;
-  margin: -1.79rem 0 0 0;
+  margin-top: -1.79rem;
   width: 100%;
   position: relative;
   border-left: none;
@@ -235,12 +236,12 @@ html {
   background: #fff;
   background-size: 100vh;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-legend {
-  padding: 0 2rem;
-  border: 1px solid grey;
-  border-radius: 50px;
-  background-color: #fff;
+  legend {
+    padding: 0 2rem;
+    border: 1px solid grey;
+    border-radius: 50px;
+    background-color: #fff;
+  }
 }
 .itemPreview {
   display: flex;
@@ -709,3 +710,35 @@ legend {
     }
   }
 }
+.contactBackground {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+.contactContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    h1 {
+      font-size: 5rem;
+    }
+    input {
+      font-size: 2.5rem;
+    }
+  }
+}
+@import "mediaQuery";

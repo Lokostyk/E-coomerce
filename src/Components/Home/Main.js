@@ -6,6 +6,7 @@ import {useLocation} from "react-router-dom"
 import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
 import ProductsCategories from './subcomponents/ProductsCategories';
+import ContactUs from '../Contact/ContactUs';
 
 gsap.registerPlugin(CSSRulePlugin)
 export default function Main() {
@@ -54,6 +55,7 @@ export default function Main() {
             <BestSellers />
             <ProductsCategories />
             <AboutUs />
+            <ContactUs />
         </>
     )
 }
