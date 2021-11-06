@@ -436,11 +436,12 @@ html {
   }
   .products {
     display: flex;
-    align-items: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
     background-color: transparent;
     border: 1px solid grey;
     border-left: none;
+    border-right: none;
     height: 200vh;
     &:before {
       content: "";
@@ -457,7 +458,7 @@ html {
     }
     .productsItem {
       padding: 0.5rem;
-      margin: 1rem;
+      margin: 1rem auto;
       display: flex;
       flex-direction: column;
       font-size: 2rem;
@@ -680,6 +681,7 @@ html {
       .productSumPreview {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         font-size: 1.4rem;
         &:nth-of-type(even) {
           background-color: #e7e7e7;

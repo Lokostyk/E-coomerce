@@ -17,9 +17,9 @@ export default function BasketItem({item}) {
                 <img src="/pictures/minus.svg" className="controlBtn" />
             </button>
             <input type="number" value={numberOfItems} 
-            onChange={e=>e.target.value>=1?setNumberOfItems(Number(e.target.value)):setNumberOfItems("")}
+            onChange={e=>e.target.value>=2000?setNumberOfItems(2000):e.target.value>=1?setNumberOfItems(Number(e.target.value)):setNumberOfItems("")}
             onBlur={e=>e.target.value===""?setNumberOfItems(1):null}/>
-            <button onClick={()=>setNumberOfItems(numberOfItems+1)}>
+            <button onClick={()=>numberOfItems===2000?"":setNumberOfItems(numberOfItems+1)}>
                 <img src="/pictures/plus.svg" className="controlBtn"/>
             </button>
             <p className="price">{item.price}<span style={{color:"#e6a519"}}>$</span></p>
