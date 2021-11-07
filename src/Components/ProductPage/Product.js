@@ -13,7 +13,7 @@ export default function Product() {
     const id = Number(pathname.slice(pathname.lastIndexOf("/")+1))
     const productData = useSelector((state)=>state.bestSeller.bestSellers.filter(item=>item.id === id)[0])
     const dispatch = useDispatch()
-    const [currentImg,setCurrentImg] = useState("/pictures/polar-black.jpg")
+    const [currentImg,setCurrentImg] = useState(productData.imgs[0])
 
     useEffect(()=>{
         gsap.from(img,{opacity:0,duration:1})

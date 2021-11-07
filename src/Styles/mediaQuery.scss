@@ -165,7 +165,7 @@
       }
     }
     .products .productsItem {
-      margin: 0.4rem auto;
+      margin: 0.4rem 0.5%;
       width: 24%;
       padding: 0.2rem;
       font-size: 1.1rem;
@@ -219,6 +219,37 @@
       button {
         padding: 1rem 3rem;
         font-size: 1.5rem;
+      }
+    }
+  }
+  .productContainer {
+    .product {
+      img {
+        height: 75vh;
+      }
+      .productInfo {
+        h1 {
+          margin: 3rem 0 0.5rem 0;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 2rem;
+          &:first-of-type {
+            margin-bottom: 1.2rem;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+        input {
+          margin: 0.2rem 0.5rem 0 0;
+          height: 25px;
+          width: 25px;
+        }
+        .addBtn {
+          margin: 2.5rem 0;
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -387,11 +418,32 @@
   }
   .productsContainer {
     .products .productsItem {
-      margin: 0.4rem auto;
+      margin: 0.4rem 0.5%;
       width: 49%;
       padding: 0.2rem;
       .breaker {
         margin: 0.2rem auto;
+      }
+    }
+  }
+  .productContainer {
+    .product {
+      img {
+        height: 65vh;
+      }
+      .productInfo {
+        h1 {
+          margin: 3rem 0 0.5rem 0;
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 1.8rem;
+        }
+        .addBtn {
+          padding: 1.3rem 1.8rem;
+          margin: 2rem 0;
+          font-size: 1.5rem;
+        }
       }
     }
   }

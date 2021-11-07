@@ -442,7 +442,6 @@ html {
     border: 1px solid grey;
     border-left: none;
     border-right: none;
-    height: 200vh;
     &:before {
       content: "";
       position: fixed;
@@ -458,7 +457,7 @@ html {
     }
     .productsItem {
       padding: 0.5rem;
-      margin: 1rem auto;
+      margin: 1rem 1.5%;
       display: flex;
       flex-direction: column;
       font-size: 2rem;
@@ -469,7 +468,7 @@ html {
       border-radius: 8px;
       width: 31%;
       img {
-        width: 100%;
+        flex-grow: 1;
       }
       .breaker {
         margin: 0.5rem auto;
