@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function BestSellerItem(props) {
     const item = props.item
-
+    
     return (
-        <div className="itemPreview">
+        <Link to={`/products/${item.id}`}className="itemPreview">
             <img src={item.imgs[0]}/>
             <div></div>
             <span>{item.price}$</span>
-        </div>
+        </Link>
     )
 }

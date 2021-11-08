@@ -7,6 +7,11 @@ import BestSellerItem from './subcomponents/BestSellerItem'
 gsap.registerPlugin(ScrollTrigger)
 function BestSellers(props) {
     let legendRef = useRef(null)
+    useEffect(()=>{
+        const bestSellersContainer = document.querySelector("#field")
+        const itemPreview = document.querySelector(".itemPreview").clientHeight
+        bestSellersContainer.style.height = `${itemPreview+legendRef.clientHeight + 3}px`
+    },[legendRef])
     useEffect(() => {
         const elemHeight = legendRef.getBoundingClientRect().height
         gsap.from(legendRef,{

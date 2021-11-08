@@ -16,6 +16,7 @@ function App() {
   const dispatch = useDispatch()
   const basket = useSelector((state)=>state.basket.contents)
 
+  //Adding and importing from localStorage
   useEffect(()=>{
     const basketFromStorage = JSON.parse(window.localStorage.getItem("basket"))
     if(basket.length === 0 && basketFromStorage){
@@ -26,6 +27,7 @@ function App() {
     if(basket.length === 0) return
     window.localStorage.setItem("basket",JSON.stringify(basket))
   },[basket])
+  //Navbar adjustments
   useEffect(()=>{
     const navbar = document.querySelector(".navbar").style
     if(pathname !== "/"){
