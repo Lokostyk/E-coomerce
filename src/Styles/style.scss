@@ -739,11 +739,58 @@ html {
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
-    h1 {
-      font-size: 5rem;
+  }
+  .alert {
+    text-align: center;
+    color: red;
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+  }
+  legend {
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+  }
+  fieldset {
+    margin: 0.5rem auto;
+    border-radius: 10px;
+    width: 80%;
+    background-color: #fff;
+  }
+  input {
+    padding-inline-start: 0.2rem;
+    font-size: 2.5rem;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    &[type="submit"] {
+      margin: 0.5rem auto 0 auto;
+      padding: 0.5rem 3rem;
+      width: 20rem;
+      border-radius: 20px;
     }
+  }
+  textarea {
+    padding-inline-start: 0.2rem;
+    width: 100%;
+    font-size: 1.8rem;
+    resize: none;
+    border: none;
+    outline: none;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    fieldset,
     input {
-      font-size: 2.5rem;
+      width: 48%;
     }
   }
 }

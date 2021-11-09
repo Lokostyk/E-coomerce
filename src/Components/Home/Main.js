@@ -18,10 +18,11 @@ export default function Main() {
         const navHeight = document.querySelector(".navLink")
         
         if(hash !== ""){
-            const element = document.querySelector(`.${hash.slice(1)}`).offsetTop
-            console.log(navHeight.clientHeight,element,element-navHeight.clientHeight-1,document.body.clientHeight)
-            window.scrollTo({top:element-navHeight.clientHeight-1,behavior:"smooth"})
-
+            setTimeout(()=>{
+                const element = document.querySelector(`.${hash.slice(1)}`).offsetTop
+                console.log(navHeight.clientHeight,element,element-navHeight.clientHeight-1,document.body.clientHeight)
+                window.scrollTo({top:element-navHeight.clientHeight-1,behavior:"smooth"})
+            },10)
         }else {
         window.scrollTo(0,0)
         }
