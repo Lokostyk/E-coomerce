@@ -21,7 +21,7 @@ export default function Product() {
     return (
         <div className="productContainer">
             <div className="product">
-                <img ref={e=>img=e} src={currentImg} />
+                <img ref={e=>img=e} src={currentImg}/>
                 <div className="productInfo">
                     <h1>{productData.name}</h1>
                     <p>{productData.price}<span style={{color:"#e6a519"}}>$</span></p>

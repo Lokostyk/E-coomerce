@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function ProductsContainer({bestSellers,chosenProducts,downPrice,upPrice,search,gender}) {
     const [productsAfterSearch,setProductsAfterSearch] = useState(bestSellers)
     const [finalProducts,setFinalProducts] = useState([])
-
+    
     //Search and price range
     useEffect(() => {
         const dPrice = downPrice?Number(downPrice):0

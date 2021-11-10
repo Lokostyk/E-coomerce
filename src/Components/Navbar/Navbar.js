@@ -12,6 +12,7 @@ export default function Navbar() {
                 <div/>
                 <p>JourneyEmpire</p>
             </Link>
+            <button className="hamburgerBtn">awdwad</button>
             <ul>
                 <li>
                     <ul className="products">

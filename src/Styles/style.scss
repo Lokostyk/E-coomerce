@@ -101,6 +101,10 @@ html {
       }
     }
   }
+  .hamburgerBtn {
+    margin: 0 auto;
+    display: none;
+  }
   .navLink {
     position: relative;
     padding: 1.6rem 3.75rem;
@@ -117,7 +121,6 @@ html {
       background-size: 80% 3px;
     }
   }
-
   .cart {
     margin-right: 0.5rem;
     align-self: center;
@@ -559,6 +562,7 @@ html {
       }
     }
     img {
+      margin-right: 1rem;
       height: 80vh;
     }
   }
@@ -730,6 +734,9 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("./Images/table.jpg") center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   position: relative;
   form {
     padding: 1rem;
@@ -788,8 +795,7 @@ html {
   div {
     display: flex;
     justify-content: space-between;
-    fieldset,
-    input {
+    fieldset {
       width: 48%;
     }
   }

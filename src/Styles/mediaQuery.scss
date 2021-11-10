@@ -448,3 +448,41 @@
     }
   }
 }
+@media screen and (max-width: 800px) {
+  .navbar {
+    .hamburgerBtn {
+      display: flex;
+    }
+    & > ul {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: black;
+      z-index: 3;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+      .products {
+        div {
+          transform: unset;
+          left: 100%;
+          top: 0;
+        }
+      }
+    }
+    .navLink {
+      font-size: 2rem;
+    }
+  }
+}
