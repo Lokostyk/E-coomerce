@@ -456,12 +456,16 @@
     & > ul {
       justify-content: center;
       align-items: center;
-      height: 100vh;
       flex-direction: column;
       position: absolute;
       left: 0;
       top: 0;
+      height: 100vh;
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
       background-color: black;
+      transition: 1s all;
       z-index: 3;
       &::after {
         content: "";
@@ -470,11 +474,14 @@
         left: 0;
         height: 100vh;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0);
+        transition: 1s all 0.3s;
         z-index: -1;
       }
       .products {
         div {
+          border-left: 1px solid $gold;
+          background-color: black;
           transform: unset;
           left: 100%;
           top: 0;
@@ -483,6 +490,15 @@
     }
     .navLink {
       font-size: 2rem;
+      transition: 1s all;
+    }
+  }
+  .activeNavbar {
+    & > ul {
+      max-width: 400px;
+      &::after {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
   }
 }
