@@ -104,7 +104,7 @@ html {
   .hamburgerBtn {
     margin: 0 auto;
     display: none;
-    background-color: inherit;
+    background-color: transparent;
     border: none;
   }
   .navLink {
@@ -324,6 +324,9 @@ html {
     margin: 2rem 2rem 1rem 15%;
     &:first-of-type {
       margin-top: 0px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
     }
     &:nth-child(even) {
       margin: 2rem 15% 1rem 2rem;
@@ -768,6 +771,7 @@ html {
   }
   fieldset {
     margin: 0.5rem auto;
+    border: 0;
     border-radius: 10px;
     width: 80%;
     background-color: #fff;
@@ -787,6 +791,7 @@ html {
     }
   }
   textarea {
+    margin-bottom: 0.5rem;
     padding-inline-start: 0.2rem;
     width: 100%;
     font-size: 1.8rem;

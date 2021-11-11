@@ -253,6 +253,17 @@
       }
     }
   }
+  .contactContainer {
+    h1 {
+      font-size: 3rem;
+    }
+    input {
+      font-size: 1.5rem;
+    }
+    legend {
+      font-size: 1.3rem;
+    }
+  }
 }
 @media screen and (max-width: 1200px) {
   .navbar {
@@ -498,6 +509,89 @@
       max-width: 400px;
       &::after {
         background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .mainBackground {
+    .backgroundImage {
+      object-position: right;
+    }
+    .mainContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .mainTitle {
+        font-size: 3.5rem;
+      }
+      .mainTxt {
+        margin-left: 0px;
+      }
+    }
+  }
+  .itemPreview {
+    img {
+      height: 100px;
+    }
+    span {
+      font-size: 1.3rem;
+      padding: 0.1rem;
+    }
+  }
+  .categories {
+    flex-direction: column;
+    a {
+      padding: 0.5rem 1rem 1rem 1rem;
+      margin: 1rem auto !important;
+      width: 60vw;
+      h2 {
+        font-size: 1.5rem;
+      }
+      img {
+        height: 50vw;
+      }
+    }
+  }
+  .aboutUs {
+    article {
+      flex-direction: column;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        line-height: unset;
+        font-size: 1.6rem;
+      }
+      img {
+        margin-top: 0.5rem;
+        width: 80%;
+        height: auto;
+      }
+      &:nth-child(even) {
+        flex-direction: column-reverse;
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .aboutUs {
+    article {
+      div {
+        padding: 0 0.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+      img {
+        width: 100%;
       }
     }
   }

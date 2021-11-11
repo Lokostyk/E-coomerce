@@ -21,7 +21,7 @@ export default function AboutUs() {
                             Our high-quality fabrics feature fibers that are closely and tightly woven together. There should be no obvious gaps between fibers as that’s often an indication of weakness in the fiber quality. These fabrics can tear easily. High quality fabrics have a more well-balanced combination of vertical and horizontal weaves, which make for a stronger fabric surface.
                         </p>
                     </div>
-                    <img src="pictures/fabric.webp" alt="Image of fabric"/>
+                    <img src="pictures/fabric.webp" alt="Image of a fabric"/>
                 </article>
                 <article>
                     <img src="pictures/snowy-mountains.jpg" alt="Walking people on snowy mountains"/>

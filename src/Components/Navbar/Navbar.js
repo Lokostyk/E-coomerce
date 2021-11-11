@@ -44,7 +44,6 @@ export default function Navbar() {
                 <li><Link to="/#aboutUs" className="navLink">About Us</Link></li>
                 <li><Link to="/#contactContainer" className="navLink">Contact</Link></li>
                 <li><Link to="/" className="navLink">Info</Link></li>
-                <button onClick={()=>setMobileSidebar(false)}>dawd</button>
             </ul>
             <Link to="/basket" className="cart">
                 <img src="/pictures/shopping-bag.png"/>
