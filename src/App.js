@@ -10,6 +10,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Basket from "./Components/Basket/Basket";
 import Products from "./Components/Products/Products";
 import Product from "./Components/ProductPage/Product";
+import Info from "./Components/Info/Info";
 
 function App() {
   const {pathname} = useLocation()
@@ -35,11 +36,9 @@ function App() {
       navbar.overflow = "visible"
       navbar.position = "relative"
     }else{
-      console.log("object")
       navbar.position = "fixed"
     }
     document.addEventListener("scroll",addNav)
-    console.log(navbar.overflow)
   },[pathname])
   const addNav = () =>{
     gsap.to(document.querySelector(".navbar"),{duration:1,maxHeight:"200px",overflow:"visible"})
@@ -52,6 +51,7 @@ function App() {
         <Route path="/basket" component={Basket}/>
         <Route path="/products" exact component={Products}/>
         <Route path="/products/:id"  component={Product}/>
+        <Route path="/info" component={Info} />
       </>
   );
 }

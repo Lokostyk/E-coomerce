@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 import { useSelector } from "react-redux"
 
@@ -44,7 +44,7 @@ export default function Navbar() {
                 </li>
                 <li><Link to="/#aboutUs" className="navLink">About Us</Link></li>
                 <li><Link to="/#contactContainer" className="navLink">Contact</Link></li>
-                <li><Link to="/" className="navLink">Info</Link></li>
+                <li><Link to="/info" className="navLink">Info</Link></li>
             </ul>
             <Link to="/basket" className="cart">
                 <img src="/pictures/shopping-bag.png"/>

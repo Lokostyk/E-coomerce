@@ -809,4 +809,24 @@ html {
     }
   }
 }
+.info {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  .infoImgs {
+    display: flex;
+    img {
+      height: 16vw;
+    }
+    p {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}
 @import "mediaQuery";
