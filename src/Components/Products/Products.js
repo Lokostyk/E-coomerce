@@ -17,6 +17,7 @@ export default function Products() {
     const [chosenProducts,setChosenProducts] = useState()
     const [gender,setGender] = useState()
     
+    window.scrollTo({top:0,behavior:"smooth"})
     useEffect(()=>{
         window.scrollTo({top:0,behavior:"smooth"})
     },[chosenProducts])

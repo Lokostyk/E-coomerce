@@ -1,7 +1,7 @@
 import React,{useEffect,useRef} from 'react'
 import gsap from 'gsap'
 import { CSSRulePlugin } from "gsap/all";
-import {useLocation,useHistory} from "react-router-dom"
+import {useLocation} from "react-router-dom"
 
 import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
@@ -16,14 +16,13 @@ export default function Main() {
     //Scroll to chosen section
     useEffect(()=>{
         const navHeight = document.querySelector(".navLink")
-        
         if(hash !== ""){
             setTimeout(()=>{
                 const element = document.querySelector(`.${hash.slice(1)}`).offsetTop
                 window.scrollTo({top:element-navHeight.clientHeight-1,behavior:"smooth"})
             },10)
         }else {
-        window.scrollTo(0,0)
+            window.scrollTo(0,0)
         }
     },[hash,pathname])
     //Animations

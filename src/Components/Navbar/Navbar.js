@@ -7,6 +7,7 @@ export default function Navbar() {
     const [mobileSidebar,setMobileSidebar] = useState(false)
 
     useEffect(()=>{
+        if(document.body.clientWidth > 800) return
         const navbarOverflow = document.querySelector(".linksContainer").style
         if(mobileSidebar){
             setTimeout(()=>{

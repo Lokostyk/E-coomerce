@@ -35,9 +35,11 @@ function App() {
       navbar.overflow = "visible"
       navbar.position = "relative"
     }else{
+      console.log("object")
       navbar.position = "fixed"
     }
     document.addEventListener("scroll",addNav)
+    console.log(navbar.overflow)
   },[pathname])
   const addNav = () =>{
     gsap.to(document.querySelector(".navbar"),{duration:1,maxHeight:"200px",overflow:"visible"})
