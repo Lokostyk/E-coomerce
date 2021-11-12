@@ -28,6 +28,8 @@ html {
   position: sticky;
   left: 0;
   top: 0;
+  max-height: 700px;
+  transition: 1s all;
 }
 .navbar {
   display: flex;
@@ -480,7 +482,7 @@ html {
       border-radius: 8px;
       width: 31%;
       img {
-        flex-grow: 1;
+        margin: auto 0;
       }
       .breaker {
         margin: 0.5rem auto;
@@ -711,7 +713,7 @@ html {
       font-size: 1.65rem;
       border-bottom: 1px solid grey;
     }
-    button {
+    .checkoutBtn {
       padding: 1.5rem 5rem;
       border: none;
       border-radius: 0 0 4rem 4rem;

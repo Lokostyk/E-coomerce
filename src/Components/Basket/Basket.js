@@ -1,9 +1,11 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import {hideSearch} from '../../SharedFunctions/mobileExpand'
 
 import BasketItem from "./subcomponents/BasketItem"
 
 export default function Basket() {
+    const docWidth = document.body.clientWidth
     const basket = useSelector((state)=>state.basket.contents)
 
     return (
@@ -22,6 +24,8 @@ export default function Basket() {
                 }
             </div>
             <div className="summary">
+                {docWidth<=800 &&
+                <button className="mobileBasketBtn" onClick={()=>hideSearch()}><img src="/pictures/arrow.svg" /></button>}
                 <div className="stickyScroll" style={{top:"10vh"}}>
                 <h1>Summary</h1>
                 <div className="productSumContainer">
@@ -46,7 +50,7 @@ export default function Basket() {
                     },0)}<span style={{color:"#e6a519"}}>$</span>
                     </p>
                 </div>
-                <button>Checkout</button>
+                <button className="checkoutBtn">Checkout</button>
                 </div>
             </div>
         </section>

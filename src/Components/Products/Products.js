@@ -3,9 +3,12 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import ProductsContainer from './subcomponents/ProductsContainer'
 import { useLocation } from 'react-router'
+import {hideSearch} from '../../SharedFunctions/mobileExpand'
+import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 export default function Products() {
+    const docWidth = document.body.clientWidth
     let animationRef = useRef(null)
     const {hash} = useLocation()
     const [search,setSearch] = useState("")
@@ -26,17 +29,20 @@ export default function Products() {
     //Animations
     useEffect(()=>{
         const animationFilter = animationRef.querySelector(".search")
-        gsap.to(animationFilter,{scrollTrigger:{trigger:animationFilter,start:"top top",scrub:true},width:"40%",border:"1px solid grey",borderRadius:"2rem"})
+        gsap.to(animationFilter,{scrollTrigger:{trigger:animationFilter,start:"top top",scrub:true},width:`${docWidth>=800?"40%":"80%"}`,border:"1px solid grey",borderRadius:"2rem"})
     },[])
     return (
         <main className="productsContainer" ref={e=>animationRef=e}>
             <section className="breadcrumb">
-                <a>Home</a><span>/</span><a>All</a>
+                <Link to="/" style={{color:"black",textDecoration:"underline"}}>Home</Link><span>/</span><a>All</a>
             </section>
-            <section className="search" style={{width:"90%"}}>
+            <section className="search" style={{width:`${docWidth>=800?"90%":"100%"}`}}>
                 <input value={search} onChange={e=>setSearch(e.target.value)}/>
             </section>
             <section className="filter">
+                {docWidth<=800 && 
+                    <button className="mobileSearchBtn" onClick={()=>hideSearch()}><img src="/pictures/arrow.svg"/></button>
+                }
                 <div className="stickyScroll">
                 <div className="priceRange">
                     <h2>Price range</h2>
