@@ -49,6 +49,7 @@ export default function Navbar() {
             <Link to="/basket" className="cart">
                 <img src="/pictures/shopping-bag.png"/>
                 <span>{basketItemCount}</span>
+                
             </Link>
         </nav>
     )
