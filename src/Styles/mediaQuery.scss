@@ -649,6 +649,19 @@
       }
     }
   }
+  .info {
+    font-size: 2rem;
+    .infoImgs {
+      .imgContainer {
+        margin: 0;
+        width: 15vw;
+        font-size: 1rem;
+        img {
+          height: 14vw;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 600px) {
   .productContainer {
@@ -661,6 +674,7 @@
         margin-top: 0.3rem;
       }
       .productInfo {
+        height: auto;
         align-items: center;
         h1 {
           margin-top: 0;
@@ -743,6 +757,20 @@
           &:last-of-type {
             margin: 0px;
           }
+        }
+      }
+    }
+  }
+  .info {
+    font-size: 1.5rem;
+    .infoImgs {
+      flex-wrap: wrap;
+      .imgContainer {
+        margin: 0 auto;
+        width: 30vw;
+        font-size: 1rem;
+        img {
+          height: 29vw;
         }
       }
     }

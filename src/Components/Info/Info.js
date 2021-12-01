@@ -5,12 +5,27 @@ function Info() {
         <section className="info" >
             <h1>Stack used:</h1>
             <div className="infoImgs">
-                <img src="/pictures/js.png"/>
-                <img src="/pictures/sass.png"/>
-                <img src="/pictures/redux.png"/>
-                <img src="/pictures/react.png"/>
-                <img src="/pictures/router.png"/>
-                <div>
+                <div className="imgContainer">
+                    <img src="/pictures/javascript.svg"/>
+                    <p><b>Javascript</b></p>
+                </div>
+                <div className="imgContainer">
+                    <img src="/pictures/react.svg"/>
+                    <p><b>React</b></p>
+                </div>
+                <div className="imgContainer">
+                    <img src="/pictures/redux.svg"/>
+                    <p><b>React-redux</b></p>
+                </div>
+                <div className="imgContainer">
+                    <img src="/pictures/router.png"/>
+                    <p><b>React-router</b></p>
+                </div>
+                <div className="imgContainer">
+                    <img src="/pictures/sass.svg"/>
+                    <p><b>Sass</b></p>
+                </div>
+                <div className="imgContainer">
                     <img src="/pictures/gsap.svg"/>
                     <p><b>Gsap</b></p>
                 </div>

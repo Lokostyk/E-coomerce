@@ -1,7 +1,7 @@
 import React,{useEffect,useRef} from 'react'
 import gsap from 'gsap'
 import { CSSRulePlugin } from "gsap/all";
-import {useLocation} from "react-router-dom"
+import {useLocation,Link} from "react-router-dom"
 
 import BestSellers from '../BestSellers/BestSellers'
 import AboutUs from '../About.js/AboutUs';
@@ -50,7 +50,7 @@ export default function Main() {
                     <div>
                         <p className="mainTxt">with <span>Confidence</span></p>
                         <p className="mainTxt">and <span>Comfort</span></p>
-                        <button className="mainBtn">explore</button>
+                        <button className="mainBtn" onClick={()=>window.location = "http://localhost:3000/#aboutUs"}>explore</button>
                     </div>
                 </div>
             </div>
